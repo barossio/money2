@@ -13,12 +13,12 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 //src/config.js
  export const configFirebase = {
-    apiKey: 'AIzaSyAhXMlUf6oV2qrRXmJSz0kwHAgGUYiu1hk',
-    authDomain: 'manager-ba145.firebaseapp.com',
-    databaseURL: 'https://manager-ba145.firebaseio.com',
-    projectId: 'manager-ba145',
-    storageBucket: 'manager-ba145.appspot.com',
-    messagingSenderId: '768207429188'
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: ''
   };
 ```
 
