@@ -56,11 +56,7 @@ const styles = {
         paddingLeft: 20
     },
     pickerStyle: {
-        ...Platform.select({
-            ios: {
-                flex: 1
-            }
-        })
+        
     }
 };
 
