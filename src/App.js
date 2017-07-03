@@ -1,21 +1,27 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
 import firebase from 'firebase';
 import reducers from './reducers';
 import { configFirebase } from './config';
-import LoginForm from './components/LoginForm';
+import RouterComponent from './Router';
 
 class App extends React.Component {
     componentWillMount() {
         const config = configFirebase;
-        firebase.initializeApp(config);
+        if (!firebase.apps.length) {
+            firebase.initializeApp(config);
+        }
     }
+
     render() {
+        const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
         return (
-            <Provider store={createStore(reducers)}>
-                <LoginForm />
+            <Provider store={store}>
+                <RouterComponent />
             </Provider>
         );
     }
