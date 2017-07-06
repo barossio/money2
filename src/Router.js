@@ -1,17 +1,49 @@
-import { StackNavigator } from 'react-navigation';
-import LoginForm from './components/LoginForm';
-import EmployeeList from './components/EmployeeList';
-import EmployeeCreate from './components/EmployeeCreate';
-import EmployeeEdit from './components/EmployeeEdit';
+import { StackNavigator, TabNavigator } from 'react-navigation';
+import TransactionList from './components/TransactionList';
+import TransactionForm from './components/TransactionForm';
+import TransactionMemo from './components/TransactionMemo';
+import ReportSummary from './components/ReportSummary';
+
+const TabNav = TabNavigator({
+  TransactionList: { 
+    screen: TransactionList,
+    navigationOptions: {
+        title: 'title_TransactionList',
+        tabBarLabel: 'History'
+    }
+  },
+  TransactionForm: { 
+    screen: TransactionForm
+  },
+  ReportSummary: { 
+    screen: ReportSummary,
+    navigationOptions: {
+        title: 'title_ReportSummary',
+        tabBarLabel: 'Report'
+    }
+  }
+},
+{
+  tabBarPosition: 'bottom'
+}
+);
 
 const RouterComponent = StackNavigator({
-  Login: { screen: LoginForm },
-  EmployeeList: { screen: EmployeeList },
-  EmployeeCreate: { screen: EmployeeCreate },
-  EmployeeEdit: { screen: EmployeeEdit }
+  TabNav: { 
+    screen: TabNav,
+    navigationOptions: {
+      //  title: 'title_TabNav'
+    }
+  },
+  TransactionMemo: {
+    screen: TransactionMemo,
+    navigationOptions: {
+      //  title: 'title_TabNav'
+    }
+  }
 }, 
 {
-    initialRouteName: 'Login'
+    initialRouteName: 'TabNav'
 }
 );
 
