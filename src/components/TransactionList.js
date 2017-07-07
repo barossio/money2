@@ -1,10 +1,16 @@
 import React from 'react';
 import { Text } from 'react-native'; 
+import { Button,Card,CardSection } from './common';
 
 class TransactionList extends React.Component {
     render() {
         return (
-        <Text>TransactionList</Text>
+        <Card>
+            <CardSection>
+                <Text>TransactionList</Text>
+            </CardSection>
+            
+        </Card>
         );
     }
 }

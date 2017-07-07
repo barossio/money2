@@ -1,2 +1,1 @@
-export * from './AuthAction';
-export * from './EmployeeAction';
+export * from './InputFormAction';
